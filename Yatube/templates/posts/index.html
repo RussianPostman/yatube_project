@@ -1,7 +1,13 @@
-{% extends 'base.html' %}
-{% block title %}
-  Последние обновления на сайте
-{% endblock %}
-{% block content %}
-  <p>{{ title }}</p>
-{% endblock %}
+{% for post in posts %}
+  <ul>
+    <li>
+      Автор: {{ post.author.get_full_name }}
+    </li>
+    <li>
+      Дата публикации: {{ post.pub_date|date:"d E Y" }}
+    </li>
+  </ul>
+  <p>{{ post.text }}</p>    
+  <a href="">все записи группы</a>
+  {% if not forloop.last %}<hr>{% endif %}
+{% endfor %} 
