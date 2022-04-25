@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}
-  Лев Толстой – зеркало русской революции.
+  {{group}}
 {% endblock %}
 {% block content %}
   <a href="{% url 'posts:main' %}">
   Подробная информация 
   </a>
-  <p>{{ title }}</p>
-  <h1>{{ mesege }}</h1>
+  <p>{{ posts }}</p>
 {% endblock %}
